@@ -15,8 +15,8 @@ namespace Otomasyon.Models
         public int ID { get; set; }
         [Required]
         [Column(Order = 2)]
-        public string Name { get; set; } 
-        public bool IsActive { get; set; }
+        public string Name { get; set; }
+        public bool IsActive { get; set; } = true;
         [Column(TypeName = "datetime2")]
         public DateTime? AddedDate { get; set; }
     }

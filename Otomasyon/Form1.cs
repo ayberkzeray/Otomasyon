@@ -14,6 +14,9 @@ namespace Otomasyon
             if (db.Users.FirstOrDefault(u => u.UserName == kullaniciAdiTBox.Text && u.Password == sifreTBox.Text) != null)
             {
                 MessageBox.Show("Tebrikler Giriş yaptınız!");
+                Form2 form2 = new Form2();
+                form2.Show();
+                this.Hide();
             }
             else
             {
@@ -26,6 +29,12 @@ namespace Otomasyon
         private void Form1_Load(object sender, EventArgs e)
         {
             db = new OtomasyonDbContext();
+            sifreTBox.PasswordChar = '*';
+
+#if DEBUG
+            kullaniciAdiTBox.Text = "ayb";
+            sifreTBox.Text = "1234";
+#endif
         }
     }
 }
